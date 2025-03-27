@@ -19,11 +19,11 @@ public class Humain {
 		this.argent = argent;
 	}
 	
-	private void gagnerArgent(int gain) {
+	protected void gagnerArgent(int gain) {
 		argent += gain;
 	}
 	
-	private boolean perdreArgent(int perte) {
+	protected boolean perdreArgent(int perte) {
 		if (argent < perte) {
 			return false;
 		}
@@ -33,7 +33,7 @@ public class Humain {
 		}
 	}
 	
-	private void parler(String texte) {
+	protected void parler(String texte) {
 		System.out.printf("(%s) - %s\n",nom,texte);
 	}
 	
