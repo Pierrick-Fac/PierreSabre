@@ -1,20 +1,36 @@
 package personnages;
 
 public class Yakuza extends Humain {
-	private int reputation = 0;
+	private int reputation = 4;
 	private String clan;
 
 	public Yakuza(String nom, String boissonPref, int argent, String clan) {
 		super(nom, boissonPref, argent);
 		this.clan = clan;
 	}
-	
+	public int getReputation() {
+		return reputation;
+	}
+
 	public void extorquer(Commercant victime) {
-		parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
-		parler(String.format("%s, si tu tiens à la vie donne moi ta bourse!",victime.getNom()));
+		parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par lï¿½ ?");
+		parler(String.format("%s, si tu tiens ï¿½ la vie donne moi ta bourse!",victime.getNom()));
 		int gain = victime.seFaireExtorquer();
 		gagnerArgent(gain);
 		reputation++;
-		parler(String.format("J'ai piqué les %d sous de %s, ce qui me fait %d sous dans ma poche. Hi ! Hi !", gain,victime.getNom(),this.getArgent()));
+		parler(String.format("J'ai piquï¿½ les %d sous de %s, ce qui me fait %d sous dans ma poche. Hi ! Hi !", gain,victime.getNom(),this.getArgent()));
+	}
+	
+	public int perdre() {
+		reputation -= 1;
+		int temp = this.getArgent();
+		parler(String.format("J'ai perdu mon duel et mes %d sous, snif... J'ai dÃ©shonorÃ© le clan de %s.", this.getArgent(),clan));
+		this.perdreArgent(temp);
+		return temp;
+	}
+	public void gagner(int gain) {
+		this.gagnerArgent(gain);
+		reputation += 1;
+		parler(String.format("Ce ronin pensait vraiment battre %s du clan %s ? Je l'ai dÃ©pouillÃ© de ses %d sous.", this.getNom(),clan,gain));
 	}
 }

@@ -11,7 +11,6 @@ public class Humain {
 	public int getArgent() {
 		return argent;
 	}
-	
 	public Humain(String nom, String boissonPref, int argent) {
 		super();
 		this.nom = nom;
@@ -47,10 +46,10 @@ public class Humain {
 	
 	public void acheter(String bien, int prix) {
 		if (perdreArgent(prix)) {
-			parler(String.format("J'ai %d sous en poche. Je vais pouvoir m'offrir une %s à %d sous.",argent+prix,bien,prix));
+			parler(String.format("J'ai %d sous en poche. Je vais pouvoir m'offrir une %s ï¿½ %d sous.",argent+prix,bien,prix));
 		}
 		else {
-			parler(String.format("Je n'ai plus que %d sous en poche. Je ne peux même pas m'offrir un %s à %d sous.",argent,bien,prix));
+			parler(String.format("Je n'ai plus que %d sous en poche. Je ne peux mï¿½me pas m'offrir un %s ï¿½ %d sous.",argent,bien,prix));
 		}
 	}
 }
