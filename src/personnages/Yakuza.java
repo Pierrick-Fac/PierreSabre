@@ -33,4 +33,10 @@ public class Yakuza extends Humain {
 		reputation += 1;
 		parler(String.format("Ce ronin pensait vraiment battre %s du clan %s ? Je l'ai dépouillé de ses %d sous.", this.getNom(),clan,gain));
 	}
+	
+	@Override
+	public void direBonjour() {
+		parler(String.format("Bonjour ! Je m'appelle %s et j'aime boire du %s.",this.getNom(),this.getBoissonPref()));
+		parler(String.format("Mon clan est celui de %s.", clan));
+	}
 }

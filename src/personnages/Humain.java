@@ -14,6 +14,10 @@ public class Humain {
 	public int getArgent() {
 		return argent;
 	}
+	public String getBoissonPref() {
+		return boissonPref;
+	}
+	
 	public Humain(String nom, String boissonPref, int argent) {
 		super();
 		this.nom = nom;
