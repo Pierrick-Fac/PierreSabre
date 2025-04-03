@@ -71,7 +71,7 @@ public class Humain {
 		this.memoriser(homme1);
 	}
 	
-	private void memoriser(Humain homme) {
+	protected void memoriser(Humain homme) {
 		if (nbConnaissance < TAILLE_MEMOIRE) {
 			memoire[nbConnaissance] = homme;
 			nbConnaissance++;
