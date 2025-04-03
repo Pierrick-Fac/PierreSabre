@@ -85,10 +85,10 @@ public class Humain {
 	}
 	
 	public void listerConnaissance() {
-		System.out.print("Je connais beaucoup de monde dont : ");
+		String texte = "";
 		for (int i = 0; i < this.nbConnaissance; i++) {
-			System.out.print(memoire[i].nom + ", ");
+			texte = texte + memoire[i].nom + ", ";
 		}
-		System.out.println("");
+		parler("Je connais beaucoup de monde dont : " + texte);
 	}
 }
